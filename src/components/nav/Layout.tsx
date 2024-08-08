@@ -1,24 +1,24 @@
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import { ReactNode, FC } from "react";
 
 type LayoutProps = {
   className?: string;
   children?: ReactNode;
 };
 
-export function Layout(props: LayoutProps) {
-  const { className, children } = props;
+const Layout: FC<LayoutProps> & {
+  Header: FC<LayoutHeaderProps>;
+  Footer: FC<LayoutFooterProps>;
+} = ({ className, children }) => {
   return <div className={cn("", className)}>{children}</div>;
-}
+};
 
 type LayoutHeaderProps = {
   className?: string;
   children?: ReactNode;
 };
 
-export function LayoutHeader(props: LayoutHeaderProps) {
-  const { className, children } = props;
-
+const Header: FC<LayoutHeaderProps> = ({ className, children }) => {
   return (
     <header
       className={cn(
@@ -26,7 +26,33 @@ export function LayoutHeader(props: LayoutHeaderProps) {
         className
       )}
     >
-      <nav className="container flex p-3 xl:p-6 gap-3 xl:gap-6">{children}</nav>
+      <nav className="container flex p-2 xl:p-4 gap-2 xl:gap-4 items-center">
+        {children}
+      </nav>
     </header>
   );
-}
+};
+
+type LayoutFooterProps = {
+  className?: string;
+  children?: ReactNode;
+};
+
+const Footer: FC<LayoutFooterProps> = ({ className, children }) => {
+  return (
+    <footer
+      className={cn(
+        "border-t p-2 xl:p-2 gap-2 xl:gap-4 flex container justify-center items-center",
+        className
+      )}
+    >
+      {children}
+    </footer>
+  );
+};
+
+// Assign Header and Footer as properties of Layout
+Layout.Header = Header;
+Layout.Footer = Footer;
+
+export { Layout };
