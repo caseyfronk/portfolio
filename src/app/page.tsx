@@ -1,68 +1,262 @@
+import { ThemeSelect } from "@/components/misc/ThemeSelect";
 import { Page } from "@/components/nav/Page";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Download, Github, Linkedin, LucideProps } from "lucide-react";
+import Link from "next/link";
+import { ComponentType } from "react";
 
 export default function Homepage() {
   return (
-    <Page>
-      <Page.Section>
-        <p className="text-5xl">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quam
-          consequuntur nulla at dolorem quos quaerat doloremque vero dolor
-          quasi? Facilis in enim ipsam tempora tempore quo, alias optio
-          inventore, modi odit, excepturi voluptatum dignissimos quos quas
-          officiis? Ab quod aperiam sapiente nam veritatis voluptatem. Quidem
-          minima officia totam eius qui excepturi fugiat officiis dolor omnis
-          quaerat blanditiis magni minus assumenda porro, explicabo modi fuga
-          expedita cupiditate ratione error nam, dicta labore sequi. Odit vitae
-          aut dolor explicabo laudantium exercitationem quae quis quod earum
-          reiciendis fugiat nisi debitis, perferendis, repudiandae quas ipsam
-          reprehenderit quasi voluptate necessitatibus aspernatur quos
-          repellendus tempore alias veritatis? Ratione ex placeat nesciunt nisi
-          aut autem. Tempora perferendis fugiat distinctio dolore ex, tenetur
-          cum voluptatibus quibusdam. Beatae omnis suscipit accusamus velit rem
-          aspernatur delectus dolorem adipisci similique amet? Maiores dolor
-          atque ducimus voluptate, esse nisi rerum explicabo. Iusto, accusamus
-          doloribus consequuntur accusantium placeat reiciendis dicta, odio,
-          excepturi tenetur modi rerum porro distinctio minus ipsa pariatur
-          quasi! Dolor repellendus, quibusdam sit sunt illum ut, adipisci fuga
-          vel minus quae pariatur quis, possimus earum. Minus id quam dolor
-          veritatis dignissimos ducimus doloremque sit culpa assumenda beatae
-          sequi, magni non quos? Optio harum commodi dignissimos quidem officiis
-          repudiandae mollitia quo labore ullam deleniti numquam dolorem, fugiat
-          in saepe rerum at animi nulla eos, et alias! Aliquam iste labore nisi
-          ducimus vero necessitatibus praesentium consequuntur ipsam! Dolorem
-          vitae natus et facere, quibusdam mollitia modi harum, animi pariatur
-          perferendis illo tenetur temporibus magnam quod quisquam nam quis fuga
-          non neque ut deserunt, quas corrupti. Voluptatem, sunt dolor quaerat
-          atque nesciunt eius cumque fuga quibusdam error suscipit modi nostrum
-          nam aspernatur esse velit alias officiis sequi perferendis aliquid
-          omnis quos dolorum quia? Aliquam magni modi consequatur aspernatur,
-          corrupti provident, facere temporibus aliquid et laudantium ad
-          veritatis nihil ducimus? Placeat accusamus repudiandae nisi
-          accusantium. Enim, rerum ullam! Quos labore architecto assumenda nisi
-          tenetur, corporis pariatur veritatis iure libero expedita atque sunt
-          commodi fugit alias molestiae ullam odio dignissimos accusantium
-          praesentium obcaecati laboriosam aperiam molestias? Dolor, suscipit
-          rem impedit fugiat dolores aliquam sequi deserunt et? Animi placeat
-          laboriosam aliquam voluptate, consectetur nostrum non rem eum repellat
-          voluptas maxime error iusto cupiditate facilis veritatis ut totam
-          cumque harum, illum corrupti amet? Laborum nihil asperiores ullam a
-          expedita nemo exercitationem animi ducimus optio tempore suscipit ad
-          neque quisquam et nostrum hic nobis, ut odio cupiditate molestiae!
-          Nihil exercitationem, unde, labore accusantium itaque velit fuga
-          explicabo quae dolor doloremque error tempore deleniti laudantium
-          sequi architecto earum officia ducimus sapiente cupiditate officiis
-          voluptatem omnis. Voluptatibus, rem ea. Sint asperiores quas porro
-          voluptatum eligendi quasi totam aliquid, eum ducimus placeat dolor
-          magnam aspernatur soluta! Nisi molestiae sint nostrum, id earum neque
-          animi voluptatibus quibusdam recusandae in doloremque repellendus
-          incidunt saepe repellat praesentium omnis libero nobis quo quisquam.
-          Ex voluptate nemo facilis neque voluptatibus suscipit harum esse a
-          repudiandae animi reiciendis nostrum amet repellendus nulla, velit
-          natus rerum iste obcaecati! Omnis ducimus quae nisi aut, veritatis
-          mollitia dolore accusantium ipsa expedita, nulla modi pariatur.
-          Tempore facere ullam delectus repellat voluptatibus officiis!
-        </p>
-      </Page.Section>
+    <Page className="flex flex-col 2 p-3 sm:p-12 lg:p-24 scroll-p-36 gap-12 xl:gap-24">
+      <div className="flex flex-col lg:flex-row pt-12 gap-6 xl:gap-12">
+        <div className="text-center lg:text-left flex-[2] flex flex-col">
+          <div className="self-center">
+            <h1 className="text-5xl font-bold tracking-tight">Casey Fronk</h1>
+            <h2 className="text-3xl mt-2 tracking-tight font-medium">
+              Software Developer
+            </h2>
+            <p className="leading-none mt-4 text-muted-foreground text-2xl">
+              I build reliable, scalable, and
+              <br />
+              intuitive web experiences.
+            </p>
+
+            <div className="flex flex-wrap gap-2 mt-6 lg:max-w-xs justify-center lg:justify-start">
+              {/* <Badge>TypeScript</Badge>
+              <Badge>React</Badge>
+              <Badge>Tailwind CSS</Badge>
+              <Badge>Next.js</Badge>
+              <Badge>Express</Badge>
+              <Badge>tRPC</Badge>
+              <Badge>Material UI</Badge>
+              <Badge>Drizzle</Badge>
+              <Badge>Prisma</Badge>
+              <Badge>PostgreSQL</Badge>
+              <Badge>SQLite</Badge>
+              <Badge>AWS</Badge>
+              <Badge>Vercel</Badge> */}
+              {linkItems.map((link, index) => (
+                <Button
+                  key={index}
+                  asChild
+                  size="icon"
+                  variant="secondary"
+                  tooltip={link.label}
+                >
+                  <Link href={link.href} target="_blank">
+                    <link.Icon />
+                  </Link>
+                </Button>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="flex-[3] text-xl">
+          <p className="leading-relaxed text-muted-foreground text-lg">
+            Back in 2009, I started tinkering with{" "}
+            <InlineLink label="Lua" href="https://www.lua.org" /> scripting in{" "}
+            <InlineLink
+              label="Garry's Mod"
+              href="https://store.steampowered.com/app/4000/Garrys_Mod"
+            />
+            . Little did I know, this was my gateway into the magnificent and
+            bottomless void of computer science.
+            <br />
+            <br />
+            This led into day-trading — but not for the money. In 2015, I
+            learned{" "}
+            <InlineLink
+              label="JavaScript"
+              href="https://www.javascript.com"
+            />{" "}
+            to build a tool that evaluated historical market data, identified
+            trends, and automatically placed buy/sell orders under various
+            conditions. There is a reason I am a software engineer and not a
+            financial analyst.
+            <br />
+            <br />
+            Jump to today, and I have had the privilege of building solutions
+            for a{" "}
+            <InlineLink
+              label="cosmetics company"
+              href="https://www.youniqueproducts.com"
+            />
+            , a{" "}
+            <InlineLink
+              label="breathalyzer manufacturer"
+              href="https://www.skyfineusa.com"
+            />
+            , and a{" "}
+            <InlineLink
+              label="solar engineering firm"
+              href="https://www.wysslingconsulting.com"
+            />
+            .
+          </p>
+        </div>
+      </div>
+
+      <nav className="bg-secondary/50 rounded-full sticky top-6 self-center shadow-md backdrop-blur items-center p-2 gap-2 flex">
+        <Button className="rounded-full" asChild>
+          <Link href="#experience">Experience</Link>
+        </Button>
+        <Button className="rounded-full" asChild>
+          <Link href="#skills">Skills</Link>
+        </Button>
+        <Button className="rounded-full" asChild>
+          <Link href="#links">Links</Link>
+        </Button>
+        <Button className="rounded-full">Demos</Button>
+        <ThemeSelect />
+      </nav>
+
+      <section id="experience" className="flex flex-col gap-3">
+        <h1 className="text-3xl text-muted-foreground">Experience</h1>
+        <WorkHistory
+          employer="Wyssling Consulting"
+          jobTitle="Senior Software Engineer"
+          period="2021 - Present"
+          items={[
+            "Leading the development of a custom CRM system in the solar industry that has modernized workflows, increased productivity, and reduced errors.",
+            "Built out a tRPC API for querying and mutating data. Token-based authentication ensures that each request is authorized.",
+            "Configured a PostgreSQL database on AWS. All table definitions and migrations managed using Drizzle - recently converted from Prisma.",
+            "Frontend built using React, shadcn/ui component and Tailwind CSS. Customizable theme with consistent UI look/feel, and light/dark modes.",
+            "Interviewing and training two engineers, conducting code reviews, and teaching scalable, maintainable software practices.",
+          ]}
+        />
+        <WorkHistory
+          employer="Skyline USA"
+          jobTitle="Software Engineer"
+          period="2020 - 2021"
+          items={[
+            "Built and implemented a React Native mobile app for iOS and Android.",
+            "Migrated an existing PHP system to React and React Native.",
+          ]}
+        />
+        <WorkHistory
+          employer="Neurology & Behavior Center"
+          jobTitle="Software Engineer"
+          period="2017 - 2020"
+          items={[
+            "Leading the development of a custom CRM",
+            "Interviewing new developers",
+            "Things",
+          ]}
+        />
+        <WorkHistory
+          employer="Younique Products"
+          jobTitle="IT Administrator"
+          period="2014 - 2018"
+          items={[
+            "Onboarding and provisioning new employees.",
+            "Network administration",
+            "Help-desk support for over 700 employees.",
+          ]}
+        />
+        <WorkHistory
+          employer="Office Max"
+          jobTitle="Cashier, Sales & Computer Repair"
+          period="2011 - 2014"
+          items={[
+            "Troubleshooting and repairing customer computers.",
+            "Providing exceptional customer service.",
+            "Selling devices, attaching services and exceeding customer-retention program expectations.",
+          ]}
+        />
+      </section>
+      <section id="skills" className="flex gap-3 flex-wrap">
+        <h1 className="text-3xl text-muted-foreground">Skills</h1>
+
+        <Badge>TypeScript</Badge>
+        <Badge>TypeScript</Badge>
+        <Badge>TypeScript</Badge>
+        <Badge>TypeScript</Badge>
+        <Badge>TypeScript</Badge>
+        <Badge>TypeScript</Badge>
+      </section>
+      <section id="links" className="flex flex-col gap-3">
+        <h1 className="text-3xl text-muted-foreground">Links</h1>
+        <div className="flex flex-wrap gap-3">
+          {linkItems.map((link, index) => (
+            <Button
+              key={index}
+              asChild
+              // size="lg"
+              // variant="primary"
+              tooltip={link.label}
+            >
+              <Link href={link.href} target="_blank">
+                {link.label}
+                <link.Icon className="ml-4" />
+              </Link>
+            </Button>
+          ))}
+        </div>
+      </section>
     </Page>
+  );
+}
+
+type InlineLinkProps = {
+  label: string;
+  href: string;
+};
+
+function InlineLink({ label, href }: InlineLinkProps) {
+  return (
+    <Link className="text-primary hover:underline" href={href} target="_blank">
+      {label}
+    </Link>
+  );
+}
+
+type Item = {
+  label: string;
+  href: string;
+  Icon: ComponentType<LucideProps>;
+};
+
+const linkItems: Item[] = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/caseyjfronk",
+    Icon: Linkedin,
+  },
+  {
+    label: "Github",
+    href: "https://github.com/caseyfronk",
+    Icon: Github,
+  },
+  {
+    label: "Download resumé",
+    href: "/casey-fronk-resume.pdf",
+    Icon: Download,
+  },
+];
+
+type WorkHistoryProps = {
+  employer: string;
+  jobTitle: string;
+  period: string;
+  items: string[];
+};
+
+function WorkHistory(props: WorkHistoryProps) {
+  const { employer, jobTitle, period, items } = props;
+
+  return (
+    <Card className="p-6">
+      <h2 className="text-2xl">{jobTitle}</h2>
+      <h2 className="text-xl">
+        {employer} · {period}
+      </h2>
+      <ul className="list-disc ml-3 text-muted-foreground">
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </Card>
   );
 }
