@@ -1,56 +1,50 @@
+import { WorkHistory } from "@/components/home/WorkHistory";
 import { ThemeSelect } from "@/components/misc/ThemeSelect";
 import { Page } from "@/components/nav/Page";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Download, Github, Linkedin, LucideProps } from "lucide-react";
+// import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ComponentType } from "react";
+
+// const ThreeScene = dynamic(() => import("@/components/ThreeScene"), {
+//   ssr: false,
+// });
 
 export default function Homepage() {
   return (
     <Page className="flex flex-col 2 p-3 sm:p-12 lg:p-24 scroll-p-36 gap-12 xl:gap-24">
+      {/* <div className="relative">
+        <ThreeScene />
+      </div> */}
       <div className="flex flex-col lg:flex-row pt-12 gap-6 xl:gap-12">
         <div className="text-center lg:text-left flex-[2] flex flex-col">
-          <div className="self-center">
-            <h1 className="text-5xl font-bold tracking-tight">Casey Fronk</h1>
-            <h2 className="text-3xl mt-2 tracking-tight font-medium">
-              Software Developer
-            </h2>
-            <p className="leading-none mt-4 text-muted-foreground text-2xl">
-              I build reliable, scalable, and
-              <br />
-              intuitive web experiences.
-            </p>
+          <h1 className="text-4xl xl:text-5xl font-bold tracking-tight">
+            Casey Fronk
+          </h1>
+          <h2 className="text-2xl xl:text-3xl mt-2 font-medium tracking-tight">
+            Senior Software Engineer
+          </h2>
+          <p className="leading-none mt-4 text-muted-foreground text-lg xl:text-2xl">
+            I build reliable, scalable, and
+            <br />
+            intuitive web experiences.
+          </p>
 
-            <div className="flex flex-wrap gap-2 mt-6 lg:max-w-xs justify-center lg:justify-start">
-              {/* <Badge>TypeScript</Badge>
-              <Badge>React</Badge>
-              <Badge>Tailwind CSS</Badge>
-              <Badge>Next.js</Badge>
-              <Badge>Express</Badge>
-              <Badge>tRPC</Badge>
-              <Badge>Material UI</Badge>
-              <Badge>Drizzle</Badge>
-              <Badge>Prisma</Badge>
-              <Badge>PostgreSQL</Badge>
-              <Badge>SQLite</Badge>
-              <Badge>AWS</Badge>
-              <Badge>Vercel</Badge> */}
-              {linkItems.map((link, index) => (
-                <Button
-                  key={index}
-                  asChild
-                  size="icon"
-                  variant="secondary"
-                  tooltip={link.label}
-                >
-                  <Link href={link.href} target="_blank">
-                    <link.Icon />
-                  </Link>
-                </Button>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-2 mt-6 lg:max-w-xs justify-center lg:justify-start">
+            {linkItems.map((link, index) => (
+              <Button
+                key={index}
+                asChild
+                size="icon"
+                variant="secondary"
+                tooltip={link.label}
+              >
+                <Link href={link.href} target="_blank">
+                  <link.Icon />
+                </Link>
+              </Button>
+            ))}
           </div>
         </div>
         <div className="flex-[3] text-xl">
@@ -61,7 +55,7 @@ export default function Homepage() {
               label="Garry's Mod"
               href="https://store.steampowered.com/app/4000/Garrys_Mod"
             />
-            . Little did I know, this was my gateway into the magnificent and
+            . Little did I know, this was my gateway into the marvelous,
             bottomless void of computer science.
             <br />
             <br />
@@ -85,6 +79,11 @@ export default function Homepage() {
             />
             , a{" "}
             <InlineLink
+              label="renowned Neuropsychologist"
+              href="https://samgoldstein.com"
+            />
+            , a{" "}
+            <InlineLink
               label="breathalyzer manufacturer"
               href="https://www.skyfineusa.com"
             />
@@ -98,17 +97,14 @@ export default function Homepage() {
         </div>
       </div>
 
-      <nav className="bg-secondary/50 rounded-full sticky top-6 self-center shadow-md backdrop-blur items-center p-2 gap-2 flex">
-        <Button className="rounded-full" asChild>
+      <nav className="bg-secondary/50 rounded-md sticky top-6 self-center shadow-md backdrop-blur items-center p-2 gap-2 flex">
+        <Button asChild>
           <Link href="#experience">Experience</Link>
         </Button>
-        <Button className="rounded-full" asChild>
-          <Link href="#skills">Skills</Link>
+        <Button asChild>
+          <Link href="#accomplishments">Accomplishments</Link>
         </Button>
-        <Button className="rounded-full" asChild>
-          <Link href="#links">Links</Link>
-        </Button>
-        <Button className="rounded-full">Demos</Button>
+        <Button>Demos</Button>
         <ThemeSelect />
       </nav>
 
@@ -120,10 +116,13 @@ export default function Homepage() {
           period="2021 - Present"
           items={[
             "Leading the development of a custom CRM system in the solar industry that has modernized workflows, increased productivity, and reduced errors.",
-            "Built out a tRPC API for querying and mutating data. Token-based authentication ensures that each request is authorized.",
+            "Revenue increased through better tracking and visibility of services rendered, data integrity, and employee productivity.",
+            "Downtime has been eliminated through strict type-safety and rigorous testing.",
+            "Implemented a tRPC API for querying and mutating data. Token-based authentication and role-based authorization ensures that each request is valid.",
             "Configured a PostgreSQL database on AWS. All table definitions and migrations managed using Drizzle - recently converted from Prisma.",
-            "Frontend built using React, shadcn/ui component and Tailwind CSS. Customizable theme with consistent UI look/feel, and light/dark modes.",
-            "Interviewing and training two engineers, conducting code reviews, and teaching scalable, maintainable software practices.",
+            "Configured a CI/CD system using AWS Code Pipeline, automated Github integration. Set up a development environment for testing the stability of new features before pushing to production.",
+            "Frontend built using React with Vite, shadcn/ui, and Tailwind CSS. Consistent, responsive, and customizable theming with light and dark modes.",
+            "Interviewing, onboarding, and training new software engineers. Conducting code reviews and teaching scalable, maintainable software practices.",
           ]}
         />
         <WorkHistory
@@ -131,18 +130,17 @@ export default function Homepage() {
           jobTitle="Software Engineer"
           period="2020 - 2021"
           items={[
-            "Built and implemented a React Native mobile app for iOS and Android.",
-            "Migrated an existing PHP system to React and React Native.",
+            "Built a React, Kotlin, and PostgreSQL application used internally to manage clients and ingest GPS and photo data from cellular-connected Ignition Interlock Devices (IID).",
+            "Implemented an intricate build script for injecting the React application into the existing PHP system that we were replacing.",
+            "Designed a React Native mobile app used by technicians across the country to install and configure Ignition Interlock Devices (IID).",
           ]}
         />
         <WorkHistory
-          employer="Neurology & Behavior Center"
-          jobTitle="Software Engineer"
-          period="2017 - 2020"
+          employer="Neurology Learning & Behavior Center"
+          jobTitle="Software Engineer & IT Administrator"
+          period="2018 - 2020"
           items={[
-            "Leading the development of a custom CRM",
-            "Interviewing new developers",
-            "Things",
+            "Managed internal network, SMTP email system, and computer hardware/software issues.",
           ]}
         />
         <WorkHistory
@@ -150,9 +148,12 @@ export default function Homepage() {
           jobTitle="IT Administrator"
           period="2014 - 2018"
           items={[
-            "Onboarding and provisioning new employees.",
-            "Network administration",
-            "Help-desk support for over 700 employees.",
+            "Onboarding new employees, provisioning user accounts.",
+            "IT department budgeting, purchasing, and configuring new hardware.",
+            "Implemented a single-sign-on solution that simplified internal access to third-party tools.",
+            "Managed internal network, configured per-department VLANs, implemented and monitored anti-virus.",
+            " Configured a failover solution between primary and backup internet connections to reduce downtime.",
+            "IT help-desk support and troubleshooting for over 700 employees.",
           ]}
         />
         <WorkHistory
@@ -162,38 +163,13 @@ export default function Homepage() {
           items={[
             "Troubleshooting and repairing customer computers.",
             "Providing exceptional customer service.",
-            "Selling devices, attaching services and exceeding customer-retention program expectations.",
+            "Sales, attaching services and exceeding customer-retention program expectations.",
           ]}
         />
       </section>
-      <section id="skills" className="flex gap-3 flex-wrap">
-        <h1 className="text-3xl text-muted-foreground">Skills</h1>
-
-        <Badge>TypeScript</Badge>
-        <Badge>TypeScript</Badge>
-        <Badge>TypeScript</Badge>
-        <Badge>TypeScript</Badge>
-        <Badge>TypeScript</Badge>
-        <Badge>TypeScript</Badge>
-      </section>
-      <section id="links" className="flex flex-col gap-3">
-        <h1 className="text-3xl text-muted-foreground">Links</h1>
-        <div className="flex flex-wrap gap-3">
-          {linkItems.map((link, index) => (
-            <Button
-              key={index}
-              asChild
-              // size="lg"
-              // variant="primary"
-              tooltip={link.label}
-            >
-              <Link href={link.href} target="_blank">
-                {link.label}
-                <link.Icon className="ml-4" />
-              </Link>
-            </Button>
-          ))}
-        </div>
+      <section id="accomplishments" className="flex flex-col gap-3">
+        <h1 className="text-3xl text-muted-foreground">Accomplishments</h1>
+        <p>WIP</p>
       </section>
     </Page>
   );
@@ -235,28 +211,3 @@ const linkItems: Item[] = [
     Icon: Download,
   },
 ];
-
-type WorkHistoryProps = {
-  employer: string;
-  jobTitle: string;
-  period: string;
-  items: string[];
-};
-
-function WorkHistory(props: WorkHistoryProps) {
-  const { employer, jobTitle, period, items } = props;
-
-  return (
-    <Card className="p-6">
-      <h2 className="text-2xl">{jobTitle}</h2>
-      <h2 className="text-xl">
-        {employer} · {period}
-      </h2>
-      <ul className="list-disc ml-3 text-muted-foreground">
-        {items.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </Card>
-  );
-}

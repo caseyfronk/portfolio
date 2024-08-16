@@ -22,7 +22,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       lang="en"
       className={cn(GeistSans.className, "scroll-smooth scroll-pt-24")}
     >
-      <body className="bg-gradient-to-br from-primary/20 to-background min-h-svh w-svw">
+      <body className="min-h-svh w-svw bg-background">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
