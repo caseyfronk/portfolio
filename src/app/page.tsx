@@ -1,213 +1,127 @@
-import { WorkHistory } from "@/components/home/WorkHistory";
-import { ThemeSelect } from "@/components/misc/ThemeSelect";
-import { Page } from "@/components/nav/Page";
+import { CustomLink } from "@/components/custom/custom-link";
+import { Section } from "@/components/custom/section";
+import { ThemeSelect } from "@/components/theme-select";
 import { Button } from "@/components/ui/button";
-import { Download, Github, Linkedin, LucideProps } from "lucide-react";
-// import dynamic from "next/dynamic";
+import { Card } from "@/components/ui/card";
+import { Github, Linkedin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { ComponentType } from "react";
 
-// const ThreeScene = dynamic(() => import("@/components/ThreeScene"), {
-//   ssr: false,
-// });
+type NavItem = { label: string; href: string };
 
-export default function Homepage() {
-  return (
-    <Page className="flex flex-col 2 p-3 sm:p-12 lg:p-24 scroll-p-36 gap-12 xl:gap-24">
-      {/* <div className="relative">
-        <ThreeScene />
-      </div> */}
-      <div className="flex flex-col lg:flex-row pt-12 gap-6 xl:gap-12">
-        <div className="text-center lg:text-left flex-[2] flex flex-col">
-          <h1 className="text-4xl xl:text-5xl font-bold tracking-tight">
-            Casey Fronk
-          </h1>
-          <h2 className="text-2xl xl:text-3xl mt-2 font-medium tracking-tight">
-            Senior Software Engineer
-          </h2>
-          <p className="leading-none mt-4 text-muted-foreground text-lg xl:text-2xl">
-            I build reliable, scalable, and
-            <br />
-            intuitive web experiences.
-          </p>
-
-          <div className="flex flex-wrap gap-2 mt-6 lg:max-w-xs justify-center lg:justify-start">
-            {linkItems.map((link, index) => (
-              <Button
-                key={index}
-                asChild
-                size="icon"
-                variant="secondary"
-                tooltip={link.label}
-              >
-                <Link href={link.href} target="_blank">
-                  <link.Icon />
-                </Link>
-              </Button>
-            ))}
-          </div>
-        </div>
-        <div className="flex-[3] text-xl">
-          <p className="leading-relaxed text-muted-foreground text-lg">
-            Back in 2009, I started tinkering with{" "}
-            <InlineLink label="Lua" href="https://www.lua.org" /> scripting in{" "}
-            <InlineLink
-              label="Garry's Mod"
-              href="https://store.steampowered.com/app/4000/Garrys_Mod"
-            />
-            . Little did I know, this was my gateway into the marvelous,
-            bottomless void of computer science.
-            <br />
-            <br />
-            This led into day-trading — but not for the money. In 2015, I
-            learned{" "}
-            <InlineLink
-              label="JavaScript"
-              href="https://www.javascript.com"
-            />{" "}
-            to build a tool that evaluated historical market data, identified
-            trends, and automatically placed buy/sell orders under various
-            conditions. There is a reason I am a software engineer and not a
-            financial analyst.
-            <br />
-            <br />
-            Jump to today, and I have had the privilege of building solutions
-            for a{" "}
-            <InlineLink
-              label="cosmetics company"
-              href="https://www.youniqueproducts.com"
-            />
-            , a{" "}
-            <InlineLink
-              label="renowned Neuropsychologist"
-              href="https://samgoldstein.com"
-            />
-            , a{" "}
-            <InlineLink
-              label="breathalyzer manufacturer"
-              href="https://www.skyfineusa.com"
-            />
-            , and a{" "}
-            <InlineLink
-              label="solar engineering firm"
-              href="https://www.wysslingconsulting.com"
-            />
-            .
-          </p>
-        </div>
-      </div>
-
-      <nav className="bg-secondary/50 rounded-md sticky top-6 self-center shadow-md backdrop-blur items-center p-2 gap-2 flex">
-        <Button asChild>
-          <Link href="#experience">Experience</Link>
-        </Button>
-        <Button asChild>
-          <Link href="#accomplishments">Accomplishments</Link>
-        </Button>
-        <Button>Demos</Button>
-        <ThemeSelect />
-      </nav>
-
-      <section id="experience" className="flex flex-col gap-3">
-        <h1 className="text-3xl text-muted-foreground">Experience</h1>
-        <WorkHistory
-          employer="Wyssling Consulting"
-          jobTitle="Senior Software Engineer"
-          period="2021 - Present"
-          items={[
-            "Leading the development of a custom CRM system in the solar industry that has modernized workflows, increased productivity, and reduced errors.",
-            "Revenue increased through better tracking and visibility of services rendered, data integrity, and employee productivity.",
-            "Downtime has been eliminated through strict type-safety and rigorous testing.",
-            "Implemented a tRPC API for querying and mutating data. Token-based authentication and role-based authorization ensures that each request is valid.",
-            "Configured a PostgreSQL database on AWS. All table definitions and migrations managed using Drizzle - recently converted from Prisma.",
-            "Configured a CI/CD system using AWS Code Pipeline, automated Github integration. Set up a development environment for testing the stability of new features before pushing to production.",
-            "Frontend built using React with Vite, shadcn/ui, and Tailwind CSS. Consistent, responsive, and customizable theming with light and dark modes.",
-            "Interviewing, onboarding, and training new software engineers. Conducting code reviews and teaching scalable, maintainable software practices.",
-          ]}
-        />
-        <WorkHistory
-          employer="Skyline USA"
-          jobTitle="Software Engineer"
-          period="2020 - 2021"
-          items={[
-            "Built a React, Kotlin, and PostgreSQL application used internally to manage clients and ingest GPS and photo data from cellular-connected Ignition Interlock Devices (IID).",
-            "Implemented an intricate build script for injecting the React application into the existing PHP system that we were replacing.",
-            "Designed a React Native mobile app used by technicians across the country to install and configure Ignition Interlock Devices (IID).",
-          ]}
-        />
-        <WorkHistory
-          employer="Neurology Learning & Behavior Center"
-          jobTitle="Software Engineer & IT Administrator"
-          period="2018 - 2020"
-          items={[
-            "Managed internal network, SMTP email system, and computer hardware/software issues.",
-          ]}
-        />
-        <WorkHistory
-          employer="Younique Products"
-          jobTitle="IT Administrator"
-          period="2014 - 2018"
-          items={[
-            "Onboarding new employees, provisioning user accounts.",
-            "IT department budgeting, purchasing, and configuring new hardware.",
-            "Implemented a single-sign-on solution that simplified internal access to third-party tools.",
-            "Managed internal network, configured per-department VLANs, implemented and monitored anti-virus.",
-            " Configured a failover solution between primary and backup internet connections to reduce downtime.",
-            "IT help-desk support and troubleshooting for over 700 employees.",
-          ]}
-        />
-        <WorkHistory
-          employer="Office Max"
-          jobTitle="Cashier, Sales & Computer Repair"
-          period="2011 - 2014"
-          items={[
-            "Troubleshooting and repairing customer computers.",
-            "Providing exceptional customer service.",
-            "Sales, attaching services and exceeding customer-retention program expectations.",
-          ]}
-        />
-      </section>
-      <section id="accomplishments" className="flex flex-col gap-3">
-        <h1 className="text-3xl text-muted-foreground">Accomplishments</h1>
-        <p>WIP</p>
-      </section>
-    </Page>
-  );
-}
-
-type InlineLinkProps = {
-  label: string;
-  href: string;
-};
-
-function InlineLink({ label, href }: InlineLinkProps) {
-  return (
-    <Link className="text-primary hover:underline" href={href} target="_blank">
-      {label}
-    </Link>
-  );
-}
-
-type Item = {
-  label: string;
-  href: string;
-  Icon: ComponentType<LucideProps>;
-};
-
-const linkItems: Item[] = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/caseyjfronk",
-    Icon: Linkedin,
-  },
-  {
-    label: "Github",
-    href: "https://github.com/caseyfronk",
-    Icon: Github,
-  },
-  {
-    label: "Download resumé",
-    href: "/casey-fronk-resume.pdf",
-    Icon: Download,
-  },
+const navigation: NavItem[] = [
+  { label: "About me", href: "#about-me" },
+  { label: "Experience", href: "#experience" },
+  { label: "My stack", href: "#my-stack" },
 ];
+
+export default function Home() {
+  return (
+    <div>
+      <header className="bg-card/80 sticky top-0 z-10 border-b shadow backdrop-blur-sm">
+        <nav className="mx-auto flex h-16 max-w-screen-xl items-center gap-3 p-3">
+          {navigation.map(({ label, href }, index) => (
+            <Button key={index} variant="link" asChild>
+              <Link href={href}>{label}</Link>
+            </Button>
+          ))}
+          <span className="flex-1" />
+          <ThemeSelect />
+        </nav>
+      </header>
+      <main className="mx-auto flex max-w-screen-xl scroll-p-20 flex-col gap-12 p-3">
+        <section className="flex h-[36rem] flex-col items-center justify-center">
+          <Card className="flex flex-col gap-12 overflow-hidden p-12 text-center md:flex-row">
+            <div className="m-auto flex flex-col items-center gap-3">
+              <h2 className="text-5xl font-semibold">Casey Fronk</h2>
+              <h3 className="text-muted-foreground text-3xl font-thin">
+                Lead Software Engineer
+              </h3>
+              <div className="flex gap-3">
+                <Button size="icon" variant="secondary" asChild>
+                  <Link
+                    href="https://www.linkedin.com/in/caseyjfronk"
+                    target="_blank"
+                  >
+                    <Linkedin />
+                  </Link>
+                </Button>
+                <Button size="icon" variant="secondary" asChild>
+                  <Link href="https://github.com/caseyfronk" target="_blank">
+                    <Github />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <Image
+              src="/casey-fronk-portrait.jpeg"
+              alt="An outdoor portrait of Casey Fronk."
+              width={256}
+              height={256}
+              objectFit="fill"
+              className="aspect-square w-64 rounded-full border-2 shadow-lg"
+            />
+          </Card>
+        </section>
+
+        <Section title="About me" id="about-me">
+          Hello! My name is Casey. I&apos;m a full-stack software engineer with
+          7 years of experience with React, TypeScript, and Node.js, starting at{" "}
+          <CustomLink href="https://devmountain.com" label="Dev Mountain" /> in
+          2017. I&apos;ve since built several projects using technologies such
+          as Next.js, TailwindCSS, tRPC, PostgreSQL, and SQLite, to name a few.
+          <br />
+          <br />
+          This site has undergone a few versions over the years, originally as a
+          React SPA, statically hosted in an S3 bucket with my domain routed to
+          it. The current version is a{" "}
+          <CustomLink href="https://nextjs.org/" label="Next.js" /> project
+          hosted on <CustomLink href="https://vercel.com" label="Vercel" />, the
+          UI is built with{" "}
+          <CustomLink href="https://ui.shadcn.com" label="shadcn/ui" />, and the
+          SQLite database is hosted on{" "}
+          <CustomLink href="https://turso.tech" label="Turso" />. The codebase
+          is public on{" "}
+          <CustomLink
+            href="https://github.com/caseyfronk/portfolio"
+            label="Github"
+          />
+          .
+          <br />
+          <br />
+          In my current role, I run a team of three software engineers for
+          Wyssling Consulting, a leading engineering firm in the solar industry.
+        </Section>
+
+        <Section title="Experience" id="experience">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi labore
+          assumenda officiis necessitatibus veritatis quia saepe numquam
+          molestias minima hic, obcaecati cupiditate laboriosam magni rerum aut
+          nihil mollitia voluptatibus quidem placeat. Ducimus recusandae ipsa
+          eum sed repudiandae consequatur corporis fuga quod dolores quisquam
+          maiores veritatis magnam, vel possimus, dolore pariatur!
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad
+          voluptatem rerum fugit non quia deleniti molestias nulla aut maiores
+          doloribus.
+        </Section>
+
+        <Section title="My stack" id="my-stack">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+          nihil harum asperiores, nesciunt, dolores rem deserunt repudiandae,
+          natus quae laboriosam ullam. Velit magnam sequi accusantium, corporis
+          blanditiis dolore omnis fugiat porro sit, rerum eum ea nemo similique
+          in adipisci nam! Impedit a esse, molestias est eius dignissimos,
+          doloremque labore ad laudantium, accusantium ipsum placeat sequi.
+          Alias vitae voluptatum repellendus delectus!
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium,
+          asperiores veniam cupiditate ipsam corrupti sunt sequi nemo cumque
+          facilis! Praesentium?
+        </Section>
+      </main>
+    </div>
+  );
+}

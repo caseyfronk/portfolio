@@ -1,28 +1,31 @@
-import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import { FileDown, Github, House, Linkedin, LucideProps } from "lucide-react";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/theme-provider";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Casey Fronk's Portfolio",
-  description:
-    "Explore Casey Fronk's projects, skills, and professional experience.",
+  description: "I turn ambitious ideas into polished products.",
 };
 
-type RootLayoutProps = {
-  children: ReactNode;
-};
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html
-      lang="en"
-      className={cn(GeistSans.className, "scroll-smooth scroll-pt-24")}
-    >
-      <body className="min-h-svh w-svw bg-background">
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -35,27 +38,3 @@ export default function RootLayout({ children }: RootLayoutProps) {
     </html>
   );
 }
-
-// type NavItem = {
-//   label: string;
-//   href: string;
-//   Icon: ComponentType<LucideProps>;
-// };
-
-// const navItems: NavItem[] = [
-//   {
-//     label: "LinkedIn",
-//     href: "https://www.linkedin.com/in/caseyjfronk",
-//     Icon: Linkedin,
-//   },
-//   {
-//     label: "Github",
-//     href: "https://github.com/caseyfronk",
-//     Icon: Github,
-//   },
-//   {
-//     label: "Download resumé",
-//     href: "/casey-fronk-resume.pdf",
-//     Icon: FileDown,
-//   },
-// ];
