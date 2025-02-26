@@ -67,8 +67,8 @@ export default function Home() {
             <Image
               src="/casey-fronk-portrait.jpeg"
               alt="An outdoor portrait of Casey Fronk."
-              width={256}
-              height={256}
+              width={800}
+              height={800}
               className="aspect-square w-64 rounded-full border-2 shadow-lg"
             />
           </Card>
