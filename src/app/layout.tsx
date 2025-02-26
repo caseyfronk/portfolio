@@ -15,7 +15,31 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Casey Fronk's Portfolio",
-  description: "I turn ambitious ideas into polished products.",
+  description:
+    "Full-stack software engineer based in Salt Lake City, transforming ambitious ideas into polished products.",
+  openGraph: {
+    title: "Casey Fronk's Portfolio",
+    description:
+      "Full-stack software engineer based in Salt Lake City, transforming ambitious ideas into polished products.",
+    url: "https://caseyfronk.com",
+    siteName: "Casey Fronk's Portfolio",
+    type: "website",
+    images: [
+      {
+        url: "https://caseyfronk.com/casey-fronk-portrait.jpeg",
+        width: 800,
+        height: 800,
+        alt: "An outdoor portrait of Casey Fronk.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Casey Fronk's Portfolio",
+    description:
+      "Full-stack software engineer based in Salt Lake City, transforming ambitious ideas into polished products.",
+    images: ["https://caseyfronk.com/casey-fronk-portrait.jpeg"],
+  },
 };
 
 export default function RootLayout({
