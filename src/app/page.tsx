@@ -1,6 +1,7 @@
 import { CustomLink } from "@/components/custom/custom-link";
 import { Experience } from "@/components/custom/experience";
 import { Section } from "@/components/custom/section";
+import { TechCard } from "@/components/custom/tech-card";
 import { ThemeSelect } from "@/components/theme-select";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -59,7 +60,7 @@ export default function Home() {
   return (
     <div>
       <header className="bg-card/80 sticky top-0 z-10 border-b shadow-sm backdrop-blur-sm">
-        <nav className="mx-auto flex h-14 md:h-16 max-w-screen-xl items-center gap-2 md:gap-3 p-2 md:p-3">
+        <nav className="mx-auto flex h-16 max-w-screen-xl items-center gap-3 p-3 md:gap-6 md:p-6">
           {navigation.map(({ label, href }, index) => (
             <Button key={index} variant="secondary" size="sm" asChild>
               <Link href={href}>{label}</Link>
@@ -171,20 +172,56 @@ export default function Home() {
         </Section>
 
         <Section title="My stack" id="my-stack">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            nihil harum asperiores, nesciunt, dolores rem deserunt repudiandae,
-            natus quae laboriosam ullam. Velit magnam sequi accusantium,
-            corporis blanditiis dolore omnis fugiat porro sit, rerum eum ea nemo
-            similique in adipisci nam! Impedit a esse, molestias est eius
-            dignissimos, doloremque labore ad laudantium, accusantium ipsum
-            placeat sequi. Alias vitae voluptatum repellendus delectus!
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Laudantium, asperiores veniam cupiditate ipsam corrupti sunt sequi
-            nemo cumque facilis! Praesentium?
-          </p>
+          <TechCard
+            name="TypeScript"
+            imagePath="/ts-logo.png"
+            alt="The TypeScript logo."
+          />
+          <TechCard
+            name="React"
+            imagePath="/react-logo.png"
+            alt="The React.js logo."
+          />
+          <TechCard
+            name="Tailwind CSS"
+            imagePath="/tailwind-logo.png"
+            alt="The Tailwind CSS logo."
+          />
+          <TechCard
+            name="Node.js"
+            imagePath="/node-logo.webp"
+            alt="The Node.js logo."
+          />
+          <TechCard
+            name="Express.js"
+            imagePath="/express-logo.png"
+            alt="The Express.js logo."
+          />
+          <TechCard
+            name="Next.js"
+            imagePath="/nextjs-logo.png"
+            alt="The Next.js logo."
+          />
+          <TechCard
+            name="PostgreSQL"
+            imagePath="/postgres-logo.png"
+            alt="The Postgres logo."
+          />
+          <TechCard
+            name="Drizzle ORM"
+            imagePath="/drizzle-logo.png"
+            alt="The Drizzle ORM logo."
+          />
+          <TechCard
+            name="Prisma ORM"
+            imagePath="/prisma-logo.png"
+            alt="The Prisma ORM logo."
+          />
+          <TechCard
+            name="Rust"
+            imagePath="/rust-logo.png"
+            alt="The Rust Programming Language logo."
+          />
         </Section>
       </main>
     </div>
