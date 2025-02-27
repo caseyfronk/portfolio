@@ -74,11 +74,14 @@ export default function Home() {
       <main className="flex flex-col">
         <Section className="flex md:h-[36rem] flex-col justify-center md:items-center">
           <Card className="flex flex-col gap-12 overflow-hidden p-12 text-center md:flex-row justify-center items-center">
-            <div className="m-auto flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-3">
               <h2 className="text-5xl font-semibold">Casey Fronk</h2>
               <h3 className="text-muted-foreground text-3xl font-thin">
                 Lead Software Engineer
               </h3>
+              <h4 className="text-muted-foreground text-xl font-thin">
+                Salt Lake City, Utah
+              </h4>
               <div className="flex gap-3 flex-wrap">
                 {links.map((link) => (
                   <TooltipProvider key={link.href}>
