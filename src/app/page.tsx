@@ -178,11 +178,13 @@ export default function Home() {
             imagePath="/ts-logo.png"
             alt="The TypeScript logo."
           >
-            I utilize TypeScript to make full-stack applications with end to end
-            type safety. TypeScript allows you to define what is and is not
-            allowed up front. This eliminates an entire class of bugs, allowing
-            you to focus on shipping products.
+            I utilize TypeScript, advanced types, generics, and modern ES6+
+            features to make full-stack applications with end to end type
+            safety. TypeScript allows you to define what is and is not allowed
+            up front. This eliminates an entire class of bugs, allowing you to
+            focus on shipping products.
           </TechCard>
+
           <TechCard
             name="React"
             imagePath="/react-logo.png"
@@ -231,6 +233,18 @@ export default function Home() {
             file-based routing system. Next.js applications can be deployed
             seamlessly on Vercel in minutes, allowing you to focus on your
             product.
+          </TechCard>
+          <TechCard
+            name="Amazon Web Services"
+            imagePath="/aws-logo.png"
+            alt="The AWS logo."
+          >
+            I have deployed multiple products leveraging AWS services, including
+            Elastic Beanstalk, S3, RDS, Lambda, and CodePipeline. AWS enables
+            scalable infrastructure that dynamically adjusts to spikes in usage
+            while maintaining cost efficiency. By utilizing these services, I
+            can ensure high availability and performance without the overhead of
+            managing physical hardware.
           </TechCard>
           <TechCard
             name="PostgreSQL"
