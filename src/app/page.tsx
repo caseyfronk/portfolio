@@ -4,9 +4,16 @@ import { Section } from "@/components/custom/section";
 import { ThemeSelect } from "@/components/theme-select";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Download, Github, Linkedin, LucideProps, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ComponentType, HTMLAttributeAnchorTarget } from "react";
 
 type NavItem = { label: string; href: string };
 
@@ -16,13 +23,45 @@ const navigation: NavItem[] = [
   { label: "My stack", href: "#my-stack" },
 ];
 
+type LinkItem = {
+  tooltip: string;
+  href: string;
+  target?: HTMLAttributeAnchorTarget;
+  Icon: ComponentType<LucideProps>;
+};
+
+const links: LinkItem[] = [
+  {
+    tooltip: "LinkedIn",
+    href: "https://www.linkedin.com/in/caseyjfronk",
+    target: "_blank",
+    Icon: Linkedin,
+  },
+  {
+    tooltip: "Github",
+    href: "https://github.com/caseyfronk",
+    target: "_blank",
+    Icon: Github,
+  },
+  {
+    tooltip: "Send me an email",
+    href: "mailto:caseyjfronk@gmail.com",
+    Icon: Mail,
+  },
+  {
+    tooltip: "Download resumé",
+    href: "/casey-fronk-resume.pdf",
+    Icon: Download,
+  },
+];
+
 export default function Home() {
   return (
     <div>
-      <header className="bg-card/80 sticky top-0 z-10 border-b shadow backdrop-blur-sm">
+      <header className="bg-card/80 sticky top-0 z-10 border-b shadow-sm backdrop-blur-sm">
         <nav className="mx-auto flex h-14 md:h-16 max-w-screen-xl items-center gap-2 md:gap-3 p-2 md:p-3">
           {navigation.map(({ label, href }, index) => (
-            <Button key={index} variant="link" asChild>
+            <Button key={index} variant="secondary" size="sm" asChild>
               <Link href={href}>{label}</Link>
             </Button>
           ))}
@@ -31,7 +70,7 @@ export default function Home() {
         </nav>
       </header>
       <main className="flex flex-col">
-        <section className="flex md:h-[36rem] flex-col justify-center md:items-center p-6">
+        <Section className="flex md:h-[36rem] flex-col justify-center md:items-center">
           <Card className="flex flex-col gap-12 overflow-hidden p-12 text-center md:flex-row justify-center items-center">
             <div className="m-auto flex flex-col items-center gap-3">
               <h2 className="text-5xl font-semibold">Casey Fronk</h2>
@@ -39,29 +78,22 @@ export default function Home() {
                 Lead Software Engineer
               </h3>
               <div className="flex gap-3 flex-wrap">
-                <Button size="icon" variant="default" asChild>
-                  <Link
-                    href="https://www.linkedin.com/in/caseyjfronk"
-                    target="_blank"
-                  >
-                    <Linkedin />
-                  </Link>
-                </Button>
-                <Button size="icon" variant="default" asChild>
-                  <Link href="https://github.com/caseyfronk" target="_blank">
-                    <Github />
-                  </Link>
-                </Button>
-                <Button size="icon" variant="default" asChild>
-                  <Link href="mailto:caseyjfronk@gmail.com">
-                    <Mail />
-                  </Link>
-                </Button>
-                <Button size="icon" variant="default" asChild>
-                  <Link href="/casey-fronk-resume.pdf">
-                    <Download />
-                  </Link>
-                </Button>
+                {links.map((link) => (
+                  <TooltipProvider key={link.href}>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Button size="icon" asChild>
+                          <Link href={link.href} target={link.target}>
+                            <link.Icon />
+                          </Link>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom">
+                        <p className="text-lg">{link.tooltip}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                ))}
               </div>
             </div>
             <Image
@@ -72,9 +104,9 @@ export default function Home() {
               className="aspect-square w-64 rounded-full border-2 shadow-lg"
             />
           </Card>
-        </section>
+        </Section>
 
-        <Section title="About me" id="about" className="bg-primary/5">
+        <Section title="About me" id="about">
           <p>
             I am a full-stack software engineer with 7 years of experience
             building React, TypeScript, and Node.js applications. I started my
@@ -102,25 +134,35 @@ export default function Home() {
             <br />
             <br />
             In my current role, I lead a team of three developers for Wyssling
-            Consulting, an engineering firm in the solar industry.
+            Consulting, an engineering firm in the solar industry. We&apos;ve
+            built a ground-up CRM for managing solar projects for over 300
+            clients. This project has <strong>by far</strong> been the largest
+            thing I have ever started, finished, and maintained—and it will
+            forever hold a special place in my heart. I&apos;ve designed a
+            custom authentication system using JSON web tokens, a photo/file
+            upload system that has processed over 2 million uploads (terabytes),
+            and everything in between.
             <br />
             <br />
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Dignissimos sit omnis reiciendis obcaecati maxime, quidem vero
-            libero at facilis corrupti earum voluptatum est cupiditate doloribus
-            natus corporis iusto voluptatibus quibusdam enim suscipit laudantium
-            reprehenderit! Exercitationem eius dolorum quam quas officiis
-            corporis non ratione, tempore labore totam quod officia voluptatum
-            aliquid numquam repudiandae quia! Laudantium obcaecati eaque nisi
-            quibusdam recusandae ratione?
+            Previously I worked as a software engineer for a breathalyzer
+            company, SkyFineUSA. We built a web and mobile platform using React
+            and React Native. The mobile app was used by technicians to install
+            Bluetooth-enabled Ignition Interlock Devices (IID), and end-users to
+            manage their accounts and process payments.
             <br />
             <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aperiam,
-            nihil laboriosam voluptatum autem maxime fuga dolore labore
-            cupiditate laborum enim quam quia est. Odio fugiat error illum
-            perferendis rerum laudantium, doloremque dignissimos ex facere
-            aspernatur alias cupiditate! Impedit soluta est adipisci aperiam
-            distinctio velit sint ipsam non eveniet dolor!
+            Before that, I was a network administrator at Younique. I played a
+            key role in managing the company&apos;s network infrastructure,
+            ensuring seamless connectivity and system performance for over 700
+            employees. I was responsible for onboarding new employees, setting
+            up their accounts, and ensuring they had the necessary technical
+            resources to be productive from day one. Additionally, I provided
+            hands-on support by resolving technical issues related to printers,
+            computers, and other IT equipment, ensuring minimal downtime and
+            maintaining smooth daily operations. My experience at Younique
+            allowed me to develop strong problem-solving skills and a deep
+            understanding of enterprise IT support and infrastructure
+            management.
           </p>
         </Section>
 
@@ -128,7 +170,7 @@ export default function Home() {
           <Experience />
         </Section>
 
-        <Section title="My stack" id="my-stack" className="bg-primary/5">
+        <Section title="My stack" id="my-stack">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
             nihil harum asperiores, nesciunt, dolores rem deserunt repudiandae,

@@ -17,11 +17,14 @@ export function ExperienceCard({
   children,
 }: ExperienceCardProps) {
   return (
-    <Card className="p-3 gap-3">
-      <h3 className="font-thin">
-        {title} • {company} • {yearStart}–{yearEnd}
-      </h3>
-      <ul className="list-disc pl-6 text-xl">{children}</ul>
+    <Card className="p-4 md:p-6 gap-2 md:gap-3">
+      <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold">{title}</h3>
+      <h4 className="text-lg md:text-xl lg:text-2xl">
+        {company} • {yearStart} – {yearEnd}
+      </h4>
+      <ul className="list-disc pl-5 text-sm md:text-base lg:text-lg font-light">
+        {children}
+      </ul>
     </Card>
   );
 }

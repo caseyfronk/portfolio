@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://caseyfronk.com/casey-fronk-portrait.jpeg",
-        width: 100,
-        height: 100,
+        width: 400,
+        height: 400,
         alt: "An outdoor portrait of Casey Fronk.",
       },
     ],
