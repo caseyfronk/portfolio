@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { Card } from "../ui/card";
+import { ReactNode } from "react";
 
 type TechCardProps = {
   name: string;
   imagePath: string;
   alt: string;
+  children?: ReactNode;
 };
 
-export function TechCard({ name, imagePath, alt }: TechCardProps) {
+export function TechCard({ name, imagePath, alt, children }: TechCardProps) {
   return (
     <Card className="p-4 md:p-6 gap-2 md:gap-3 w-full">
       <div className="gap-2 md:gap-3 flex items-center">
@@ -22,7 +24,7 @@ export function TechCard({ name, imagePath, alt }: TechCardProps) {
           {name}
         </h3>
       </div>
-      <p>Lorem ipsum dolor sit a</p>
+      <p className="">{children}</p>
     </Card>
   );
 }

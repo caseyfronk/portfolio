@@ -52,6 +52,7 @@ const links: LinkItem[] = [
   {
     tooltip: "Download resumé",
     href: "/casey-fronk-resume.pdf",
+    target: "_blank",
     Icon: Download,
   },
 ];
@@ -141,8 +142,8 @@ export default function Home() {
             thing I have ever started, finished, and maintained—and it will
             forever hold a special place in my heart. I&apos;ve designed a
             custom authentication system using JSON web tokens, a photo/file
-            upload system that has processed over 2 million uploads (terabytes),
-            and everything in between.
+            upload system that has processed over 2 million uploads (3+
+            terabytes), and everything in between.
             <br />
             <br />
             Previously I worked as a software engineer for a breathalyzer
@@ -176,52 +177,94 @@ export default function Home() {
             name="TypeScript"
             imagePath="/ts-logo.png"
             alt="The TypeScript logo."
-          />
+          >
+            I utilize TypeScript to make full-stack applications with end to end
+            type safety. TypeScript allows you to define what is and is not
+            allowed up front. This eliminates an entire class of bugs, allowing
+            you to focus on shipping products.
+          </TechCard>
           <TechCard
             name="React"
             imagePath="/react-logo.png"
             alt="The React.js logo."
-          />
+          >
+            React is a great tool for building elegant and intuitive interfaces
+            using Vite and Next.js. I build custom hooks and context providers
+            to reuse logic and define predictable behavior.
+          </TechCard>
           <TechCard
             name="Tailwind CSS"
             imagePath="/tailwind-logo.png"
             alt="The Tailwind CSS logo."
-          />
+          >
+            I use Tailwind CSS to craft stunning and responsive interfaces with
+            utility-first classes that enable rapid development, consistent
+            styling, and seamless adaptability across devices, all while keeping
+            my codebase clean and maintainable.
+          </TechCard>
           <TechCard
             name="Node.js"
             imagePath="/node-logo.webp"
             alt="The Node.js logo."
-          />
+          >
+            Node.js is a great choice for building scalable and
+            highly-performant APIs with TypeScript, leveraging its non-blocking
+            event-driven architecture to handle concurrent requests efficiently.
+          </TechCard>
           <TechCard
             name="Express.js"
             imagePath="/express-logo.png"
             alt="The Express.js logo."
-          />
+          >
+            A staple in the Node ecosystem for building REST APIs with a
+            flexible routing system, middleware support, and seamless
+            integration with databases and authentication.
+          </TechCard>
           <TechCard
             name="Next.js"
             imagePath="/nextjs-logo.png"
             alt="The Next.js logo."
-          />
+          >
+            My go-to for building serverless applications. Next.js is an
+            opinionated framework for building full-stack React apps with
+            server-side rendering, static site generations, and a simple
+            file-based routing system. Next.js applications can be deployed
+            seamlessly on Vercel in minutes, allowing you to focus on your
+            product.
+          </TechCard>
           <TechCard
             name="PostgreSQL"
             imagePath="/postgres-logo.png"
             alt="The Postgres logo."
-          />
+          >
+            I use PostgreSQL as a robust and scalable relational database,
+            leveraging its powerful querying capabilities, ACID compliance, and
+            support for advanced features like JSONB, indexing, and transactions
+            to ensure data integrity and performance in my applications.
+          </TechCard>
           <TechCard
             name="Drizzle ORM"
             imagePath="/drizzle-logo.png"
             alt="The Drizzle ORM logo."
-          />
-          <TechCard
-            name="Prisma ORM"
-            imagePath="/prisma-logo.png"
-            alt="The Prisma ORM logo."
-          />
+          >
+            I use Drizzle ORM to interact with my PostgreSQL database in a
+            type-safe and efficient manner, leveraging its lightweight,
+            SQL-first approach with prepared statements, schema inference, and
+            seamless TypeScript integration for a reliable and maintainable data
+            layer.
+          </TechCard>
           <TechCard
             name="Rust"
             imagePath="/rust-logo.png"
             alt="The Rust Programming Language logo."
-          />
+          >
+            I started learning Rust in 2023 to branch out from being a
+            TypeScript-only developer, and have since created a few games using
+            Bevy, and web servers using Axum and Actix. Rust has a powerful type
+            system and ownership model that allows you to build
+            highly-performant and memory-safe applications. Rust is being
+            adopted in many industries, and I plan to continue learning.
+          </TechCard>
         </Section>
       </main>
     </div>
