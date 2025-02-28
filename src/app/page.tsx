@@ -145,12 +145,12 @@ export default function Home() {
             thing I have ever started, finished, and maintained—and it will
             forever hold a special place in my heart. I&apos;ve designed a
             custom authentication system using JSON web tokens, a photo/file
-            upload system that has processed over 2 million uploads (3+
-            terabytes), and everything in between.
+            upload system that has processed over 2 million uploads, and
+            everything in between.
             <br />
             <br />
             Previously I worked as a software engineer for a breathalyzer
-            company, SkyFineUSA. We built a web and mobile platform using React
+            company, SkyFine USA. We built a web and mobile platform using React
             and React Native. The mobile app was used by technicians to install
             Bluetooth-enabled Ignition Interlock Devices (IID), and end-users to
             manage their accounts and process payments.
