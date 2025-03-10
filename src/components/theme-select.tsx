@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
+import { Check, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
@@ -11,9 +11,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 export function ThemeSelect() {
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <DropdownMenu>
@@ -26,12 +27,30 @@ export function ThemeSelect() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
+          <Check
+            className={cn(
+              "text-transparent",
+              theme === "light" && "text-primary"
+            )}
+          />
           Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
+          <Check
+            className={cn(
+              "text-transparent",
+              theme === "dark" && "text-primary"
+            )}
+          />
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
+          <Check
+            className={cn(
+              "text-transparent",
+              theme === "system" && "text-primary"
+            )}
+          />
           System
         </DropdownMenuItem>
       </DropdownMenuContent>

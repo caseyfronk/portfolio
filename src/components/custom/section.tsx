@@ -24,7 +24,7 @@ export function Section({
     >
       <div className="mx-auto max-w-screen-xl flex flex-col gap-3 p-3 md:gap-6 md:p-6 w-full">
         {title && (
-          <h2 className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl font-light">
+          <h2 className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl font-thin">
             {title}
           </h2>
         )}

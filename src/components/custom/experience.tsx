@@ -4,7 +4,7 @@ export function Experience() {
   return (
     <>
       <ExperienceCard
-        title="Lead Software Engineer"
+        title="Senior Software Engineer"
         company="Wyssling Consulting"
         yearStart="2021"
         yearEnd="Present"
@@ -25,42 +25,47 @@ export function Experience() {
         </li>
         <li>
           Collaborated with structural and electrical engineers to build a queue
-          system for seamless project hand-off.
+          system for seamless internal project review and hand-off.
         </li>
         <li>
           Led a team of 3. Conducting code reviews, teaching scalable design
           patterns, and collaborative feature planning.
         </li>
         <li>
-          Automated deployments via AWS using Github, Elastic Beanstalk, EC2,
-          and CodePipeline.
+          Configured automated deployments via AWS using Github, Elastic
+          Beanstalk, EC2, and CodePipeline.
         </li>
       </ExperienceCard>
+
       <ExperienceCard
-        title="Software Engineer"
+        title="Frontend Engineer (React)"
         company="SkyFine USA"
         yearStart="2020"
         yearEnd="2021"
       >
         <li>
           Migrated an existing PHP service to React, React Native, and Kotlin.
+        </li>
+        <li>
           Built an intuitive mobile app for technicians to install wireless
           Ignition Interlock Devices (IID) and configure them via Bluetooth.
         </li>
         <li>
-          Built an API for Ignition Interlock Devices (IID) to parse and store
-          photo and location data via GPS.
+          Designed a React dashboard for reviewing BAC, photo, and location data
+          captured by GPS-enabled Ignition Interlock Devices (IID).
         </li>
         <li>
-          Built a React dashboard for management of photos, location data, and
-          producing court-ordered reports.
+          Built a React Native enrollment process for end-users to provide
+          photos of their driver&apos;s license and all court-ordered
+          identification details.
         </li>
       </ExperienceCard>
+
       <ExperienceCard
         title="Network Administrator"
         company="Younique"
         yearStart="2014"
-        yearEnd="2019"
+        yearEnd="2018"
       >
         <li>
           Managed local network infrastructure. Configured routers, switches,
@@ -70,10 +75,8 @@ export function Experience() {
           Ran Cat-5 cables between server rooms, floors, and cubicles in a
           5-story building and adjacent warehouse.
         </li>
-        <li>
-          Troubleshooting and IT help-desk for over 700 employees. IT
-          Onboarding, the first friend for new employees.
-        </li>
+        <li>Troubleshooting and IT help-desk for over 700 employees.</li>
+        <li>IT Onboarding, user-provisioning, and hardware configuration.</li>
       </ExperienceCard>
     </>
   );
